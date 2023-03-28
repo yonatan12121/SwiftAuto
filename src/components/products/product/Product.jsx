@@ -14,26 +14,26 @@ const Product = ({product, onAddToCart}) => {
   return (
     <Card className={classes.root}>
 
-        <CardMedia className={classes.media} image={product.image.url}  title={product.name}/>
+        <CardMedia className={classes.media} image={product.Image}  title={product.Name}/>
 
         <CardContent>
             <div className={classes.cardContent}>
                 <Typography variant="h5" gutterBottom>
-                     {product.name}
+                     {product.Name}
                 </Typography>
 
                 <Typography variant="h5">
-                    {product.price.formatted_with_code}
+                    {product.Price}
                 </Typography>
 
                 
             </div>
-            <Typography dangerouslySetInnerHTML={{ __html : product.description }} variant="body2" color="textSecondary"/>
-            <Typography variant="body2" color="textSecondary">{product.campanyname}</Typography>
+            <Typography dangerouslySetInnerHTML={{ __html : product.Description }} variant="body2" color="textSecondary"/>
+              <Typography variant="body2" color="textSecondary">{product.Campanyname}</Typography>
         </CardContent>
         <CardActions disableSpacing className={classes.cardaction}>
 
-            <IconButton aria-label="Add to cart" onClick={() => onAddToCart(product.id, 1)}>
+            <IconButton aria-label="Add to cart" onClick={() => onAddToCart(product._id, 1)}>
 
                 <AddShoppingCart/>
 

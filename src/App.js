@@ -4,7 +4,7 @@ import {NavBar, Products1,Cart, Checkout} from './components';
 
 import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
 
-
+import axios from "axios";
 import { commerce } from './library/commerce';
 
 
@@ -15,10 +15,12 @@ const App = () => {
    const [order, setOrder] = useState({});
    const [errorMessage,setErrorMessage] = useState('');
 
+  
+
    const fetchProducts = async () => {
-    const {data} = await commerce.products.list();
+     const data = await axios.get("http://localhost:5000/product-list");
       
-        setProducts(data);
+        setProducts(data.data);
    }
 
    
